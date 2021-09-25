@@ -15,8 +15,5 @@ export const listStacks = async (cfn: AWS.CloudFormation, token?: string): Promi
   if (stacks.NextToken) {
     returnValue = returnValue.concat(await listStacks(cfn, stacks.NextToken))
   }
-
-  console.log(stacks)
-
   return returnValue;
 }
